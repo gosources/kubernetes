@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Kubernetes源码分析'
-copyright = '2020, 赵卫国'
-author = '赵卫国'
+project = u'Kubernetes源码分析'
+copyright = u'2020, 赵卫国'
+author = u'赵卫国'
 
 # The full version, including alpha/beta/rc tags
 release = 'v1.0'
