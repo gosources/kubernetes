@@ -1,0 +1,8 @@
+@startuml
+
+* kubewatch
+** golang.org/x/time/rate
+** k8s.io/apimachinery
+** k8s.io/client-go
+
+@enduml

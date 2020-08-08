@@ -1,0 +1,14 @@
+@startmindmap
+
+* Client
+** clientSet
+*** config:=clientcmd.BuildConfigFromFlags("", kubeconfigPath)
+*** client:=kubernetes.NewForConfig(config)
+** discoveryClient
+*** config:=clientcmd.BuildConfigFromFlags("", kubeconfigPath)
+*** client:=discovery.NewDiscoveryClientForConfig(config)
+** restClient
+*** config:=rest.InClusterConfig()
+*** client:=kubernetes.NewForConfig(config)
+
+@endmindmap
