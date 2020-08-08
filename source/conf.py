@@ -15,6 +15,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
+
 # -- Project information -----------------------------------------------------
 
 project = u'Kubernetes源码分析'
@@ -49,6 +50,8 @@ exclude_patterns = []
 # The suffix of source filenames.
 source_suffix = '.rst'
 
+# The master toctree document.
+master_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------
 
