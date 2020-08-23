@@ -1,0 +1,39 @@
+@startuml clientgo_clients
+
+package clients{
+
+    package clientset {
+        class Clientset {
+            - *discovery.DiscoveryClient
+            - appsV1 *appsv1.AppsV1Client
+            - coreV1
+            - batchV1
+        }
+
+        interface Interface {
+            + Discovery() discovery.DiscoveryInterface
+            + AppsV1() appsv1.AppsV1Interface
+            + CoreV1() corev1.CoreV1Interface
+            + BatchV1() batchv1.BatchV1Interface
+        }
+    }
+
+    package restClient {
+
+    }
+
+    package discoveryClient {
+        class DiscoveryClient {
+            - restClient restclient.Interface
+            - LegacyPrefix string
+        }
+    }
+
+    package dynamicClient {
+    
+    }
+
+
+}
+
+@enduml

@@ -9,6 +9,7 @@ client-go项目
    client-gos/preface
    client-gos/usage
    client-gos/architecture
+   client-gos/informer
 
 
 
