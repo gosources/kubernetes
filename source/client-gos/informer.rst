@@ -6,7 +6,8 @@ informer
    :maxdepth: 2
    :caption: Contents:
 
-   informers/type
+   informers/preface
+   informers/usage
 
 
 
