@@ -21,9 +21,5 @@
 
 
 
-参考资料
-========
-
-* `Kubernetes源码剖析 <https://item.jd.com/12665791.html>`_
 
 

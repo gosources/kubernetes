@@ -7,7 +7,7 @@ client-go项目
    :caption: Contents:
 
    client-gos/preface
-   client-gos/usage
+   client-gos/client
    client-gos/architecture
    client-gos/informer
 

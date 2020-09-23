@@ -168,7 +168,6 @@ podInformer
       return v1.NewPodLister(f.Informer().GetIndexer())
     }
 
-
 .. code-block:: go
    :lineno-start: 79
    :caption: k8s.io/client-go/informers/core/v1/pod.go
@@ -177,6 +176,8 @@ podInformer
       indexers := cache.Indexers{"namespace": cache.MetaNamespaceIndexFunc}
       return NewFilteredPodInformer(client, f.namespace, resyncPeriod, indexers, f.tweakListOptions)
     }
+
+
 
 sharedInformerFactory
 =====================

@@ -49,9 +49,3 @@ kubernates项目
 .. uml:: /plantumls/kubernetes/struct.puml
 
 
-参考文章
-========
-
-* 云原生学习笔记: https://www.yuque.com/baxiaoshi/tyado3
-
-

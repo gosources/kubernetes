@@ -14,6 +14,7 @@ kubernates源码分析
    kubernetes
    client-go
    kubewatch
+   reference
 
 Indices and tables
 ==================
