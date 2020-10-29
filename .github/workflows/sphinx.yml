@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  build:
+    name: Sphinx Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: seanzhengw/sphinx-pages@master
+        id: sphinx-pages
+        with:
+          github_token: 7d4b2e7b2b262a88747d203e2e7a5ce081be6158
+          create_readme: true
+
+
+
+
