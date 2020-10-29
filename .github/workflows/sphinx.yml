@@ -18,34 +18,24 @@ jobs:
         docs-folder: "source/"
         build-command: "sphinx-build -b html . _build"
 
-    - run: |
-        git status
-        pwd
-        ls -a
-
     - name: Clone documentation repo
       run: |
-        git clone https://github.com/zhaoweiguo/demo2.git  --branch master --single-branch demo2
-        mkdir ./demo2/kubernetes
-        cp -r source/_build/* ./demo2/kubernetes
-        cd ./demo2
-        git status
+        git clone https://github.com/zhaoweiguo/www.zhaoweiguo.com.git  --branch master --single-branch zhaoweiguo
+        mkdir ./zhaoweiguo/kubernetes
+        cp -r source/_build/* ./zhaoweiguo/kubernetes/
+        cd ./zhaoweiguo
         git config --local user.email "zhaoweiguo@github.com"
         git config --local user.name "zhaoweiguo"
         git add .
-        git commit -m "Update changes"  -a
+        git commit -m "[github workflow]Update changes"  -a
 
-    - run: |
-        git status
-        pwd
-        ls -a
 
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.ACCESS_TOKEN }}
-        directory: demo2
-        repository: 'zhaoweiguo/demo2'
+        directory: zhaoweiguo
+        repository: 'zhaoweiguo/www.zhaoweiguo.com'
         branch: master
 
 
