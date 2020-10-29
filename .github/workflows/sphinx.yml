@@ -5,12 +5,48 @@ jobs:
     name: Sphinx Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: seanzhengw/sphinx-pages@master
-        id: sphinx-pages
-        with:
-          github_token: 7d4b2e7b2b262a88747d203e2e7a5ce081be6158
-          create_readme: true
+    - name: Start
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+        fetch-depth: 0
 
+
+    - name: Sphinx Build
+      uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "source/"
+        build-command: "sphinx-build -b html . _build"
+
+    - run: |
+        git status
+        pwd
+        ls -a
+
+    - name: Clone documentation repo
+      run: |
+        git clone https://github.com/zhaoweiguo/demo2.git  --branch master --single-branch demo2
+        mkdir ./demo2/kubernetes
+        cp -r source/_build/* ./demo2/kubernetes
+        cd ./demo2
+        git status
+        git config --local user.email "zhaoweiguo@github.com"
+        git config --local user.name "zhaoweiguo"
+        git add .
+        git commit -m "Update changes"  -a
+
+    - run: |
+        git status
+        pwd
+        ls -a
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.ACCESS_TOKEN }}
+        directory: demo2
+        repository: 'zhaoweiguo/demo2'
+        branch: master
 
 
 
