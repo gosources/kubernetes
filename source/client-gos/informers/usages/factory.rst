@@ -316,7 +316,7 @@ Factory运行
         f.startedInformers[informerType] = true
       }
     }
-  }
+
 
 到此，整个facotry就基本运行完毕。
 

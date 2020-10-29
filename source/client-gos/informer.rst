@@ -8,6 +8,8 @@ informer
 
    informers/preface
    informers/usage
+   informers/func
+   informers/type
 
 
 
