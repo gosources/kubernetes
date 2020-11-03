@@ -42,4 +42,19 @@ jobs:
         branch: master
 
 
+    - name: Send dingding notify
+      uses: zcong1993/actions-ding@master
+      with:
+        dingToken: ${{ secrets.DING_TOKEN }}
+        secret: ${{ secrets.DING_SECRET }} # if secret set, action will call API with sign
+        body: |
+          {
+            "msgtype": "link",
+            "link": {
+                "text": "[GitHubAction]kubernetes is done!",
+                "picUrl": "",
+                "messageUrl": "https://www.zhaoweiguo.com/kubernetes"
+            }
+          }
+
 
