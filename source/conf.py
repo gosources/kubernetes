@@ -26,6 +26,7 @@ extensions = [
 
 # add extra command by Gordon
 # plantuml = 'java -jar /usr/local/bin/plantuml.jar'
+plantuml = "java -DPLANTUML_LIMIT_SIZE=24384 -jar "+ os.environ.get("PLANTUML_JAR")
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

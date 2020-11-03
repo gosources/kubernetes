@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      deploy
 
 jobs:
   build:
@@ -11,23 +14,23 @@ jobs:
         persist-credentials: false
         fetch-depth: 0
 
-
     - name: Sphinx Build
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "source/"
-        build-command: "sphinx-build -b html . _build"
+        pre-build-command: "apt-get update -y && mkdir -p /usr/share/man/man1 && apt-get install -y plantuml"
+        build-command: "export PLANTUML_JAR=/usr/share/plantuml/plantuml.jar && sphinx-build -b html . _build"
 
     - name: Clone documentation repo
       run: |
         git clone https://github.com/zhaoweiguo/www.zhaoweiguo.com.git  --branch master --single-branch zhaoweiguo
-        mkdir ./zhaoweiguo/kubernetes
+        rm -rf ./zhaoweiguo/kubernetes/*
         cp -r source/_build/* ./zhaoweiguo/kubernetes/
         cd ./zhaoweiguo
         git config --local user.email "zhaoweiguo@github.com"
         git config --local user.name "zhaoweiguo"
         git add .
-        git commit -m "[github workflow]Update changes"  -a
+        git commit -m "[github workflow kubernetes]Update changes"  -a || true
 
 
     - name: Push changes
