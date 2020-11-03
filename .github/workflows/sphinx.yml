@@ -19,7 +19,7 @@ jobs:
       with:
         docs-folder: "source/"
         pre-build-command: "apt-get update -y && mkdir -p /usr/share/man/man1 && apt-get install -y plantuml"
-        build-command: "PLANTUML_JAR=/usr/share/plantuml/plantuml.jar && sphinx-build -b html . _build"
+        build-command: "sphinx-build -b html . _build"
 
     - name: Clone documentation repo
       run: |
