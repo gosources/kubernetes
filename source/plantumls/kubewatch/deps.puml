@@ -3,6 +3,6 @@
 * kubewatch
 ** golang.org/x/time/rate
 ** k8s.io/apimachinery
-** k8s.io/client-go23
+** k8s.io/client-go234
 
 @enduml
