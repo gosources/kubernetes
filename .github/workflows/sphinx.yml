@@ -15,10 +15,9 @@ jobs:
         fetch-depth: 0
 
     - name: Sphinx Build
-      uses: ammaraskar/sphinx-action@master
+      uses: zhaoweiguo/sphinx-action@master
       with:
         docs-folder: "source/"
-        pre-build-command: "apt-get update -y && mkdir -p /usr/share/man/man1 && apt-get install -y plantuml"
         build-command: "sphinx-build -b html . _build"
 
     - name: Clone documentation repo
@@ -51,6 +50,7 @@ jobs:
           {
             "msgtype": "link",
             "link": {
+                "title": "GitHubAction",
                 "text": "[GitHubAction]kubernetes is done!",
                 "picUrl": "",
                 "messageUrl": "https://www.zhaoweiguo.com/kubernetes"
